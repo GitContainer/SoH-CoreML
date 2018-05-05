@@ -46,7 +46,7 @@ vectorizer = TfidfVectorizer()
 vectorized = vectorizer.fit_transform(X)
 words = open('words_ordered.txt', 'w')
 for feature in vectorizer.get_feature_names():
-    words.write(str(feature.encode('utf-8') + b'\n'))
+    words.write(feature + "\n")
 words.close()
 model = LinearSVC()
 model.fit(vectorized, y)
